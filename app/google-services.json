@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "310011808638",
+    "project_id": "golfit-db63e",
+    "storage_bucket": "golfit-db63e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310011808638:android:c7227d3adbb9ff3c8c012f",
+        "android_client_info": {
+          "package_name": "dev.yonigol.golfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310011808638-fqojhj63glv947mm4cj77bbqflg8j9np.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.yonigol.golfit",
+            "certificate_hash": "6190f53e4eb206701f8b5d332108c0ccd8831d36"
+          }
+        },
+        {
+          "client_id": "310011808638-9h7tjs71feqfmj6hjl2nkfvhb2bh9gdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM7moMhri-7oJyg-NPBDYRhpqQSxSDw-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310011808638-9h7tjs71feqfmj6hjl2nkfvhb2bh9gdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

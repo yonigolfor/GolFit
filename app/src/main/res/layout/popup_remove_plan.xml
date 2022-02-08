@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_background">
+
+    <ImageView
+        android:id="@+id/popup_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/ic_remove"
+        />
+
+    <TextView
+        android:id="@+id/popup_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/popup_iv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="popup window!"
+        android:textSize="24sp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/popup_description_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/popup_title"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:text="would you like to remove ...?"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/popup_title_tv"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_popup_remove"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:layout_width="90dp"
+            android:layout_height="65dp"
+
+            android:layout_centerInParent="true"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="25dp"
+            android:padding="0dp"
+            android:text="Delete"
+            android:textColor="@color/red_error"
+            android:textSize="18dp"
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_popup_keep"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:layout_width="90dp"
+            android:layout_height="65dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:padding="0dp"
+            android:text="Keep it"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

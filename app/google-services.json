@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "310011808638",
+    "firebase_url": "https://golfit-db63e-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "golfit-db63e",
     "storage_bucket": "golfit-db63e.appspot.com"
   },
@@ -13,14 +14,6 @@
         }
       },
       "oauth_client": [
-        {
-          "client_id": "310011808638-fqojhj63glv947mm4cj77bbqflg8j9np.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "dev.yonigol.golfit",
-            "certificate_hash": "6190f53e4eb206701f8b5d332108c0ccd8831d36"
-          }
-        },
         {
           "client_id": "310011808638-9h7tjs71feqfmj6hjl2nkfvhb2bh9gdj.apps.googleusercontent.com",
           "client_type": 3

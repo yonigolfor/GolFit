@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@drawable/gradient_background"
+    >
+
+<!--    <ImageView-->
+<!--        android:layout_width="400dp"-->
+<!--        android:layout_height="400dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:src="@mipmap/overall_progress">-->
+
+<!--    </ImageView>-->
+
+    <TextView
+        android:id="@+id/title_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:text="GolFit"
+        android:textColor="@color/white"
+        android:textSize="80dp"
+        android:textStyle="italic">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/title_splash"
+
+
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="-98dp"
+        android:text="Track your progress easily!"
+        android:textColor="@color/white"
+        android:textSize="25dp">
+
+    </TextView>
+
+
+</RelativeLayout>

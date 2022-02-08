@@ -3,9 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.21574074074074073" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/drawable/gradient_background.xml" value="0.21574074074074073" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/drawable/gradient_background_purple.xml" value="0.1787037037037037" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/drawable/popup_background.xml" value="0.22314814814814815" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/drawable/shape_circle_btn.xml" value="0.2972222222222222" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/activity_create_plan.xml" value="0.2" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/activity_enter_res.xml" value="0.1641337386018237" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/activity_enter_results.xml" value="0.1641337386018237" />
         <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/activity_login.xml" value="0.1281661600810537" />
-        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/activity_splash.xml" value="0.1816123188405797" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/activity_track.xml" value="0.1398148148148148" />
         <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/login_activity.xml" value="0.18" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/popup_remove_plan.xml" value="0.1911231884057971" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/layout/recycler_view_row.xml" value="0.25" />
+        <entry key="..\:/NVIDIA/DisplayDriver/382.05/GolFit/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19166666666666668" />
       </map>
     </option>
   </component>

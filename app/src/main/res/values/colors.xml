@@ -7,4 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_green">#47d147</color>
+    <color name="red_error">#ff0000</color>
+    <color name="input">#e7e9eb</color>
+    <color name="main_plan_btn">#e7e9eb</color>
+    <color name="background_enter_data">#ffebd6</color>
+    <color name="yellow_special">#dab800</color>
+    <color name="pink_special">#ff6766</color>
+    <color name="blue_special">#04648f</color>
+    <color name="purple_special">#810040</color>
+
+
+
+
+
 </resources>

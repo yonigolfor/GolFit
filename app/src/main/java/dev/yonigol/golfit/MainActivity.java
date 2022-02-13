@@ -144,9 +144,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         //invisible all
-        for (int i = 0; i < plansBtns.size() ; i++) {
+        invisibleAllPlansBtns();
+
+
+    }
+
+    private void invisibleAllPlansBtns() {
+        for (int i = 0; i < plansBtns.size() ; i++)
             plansBtns.get(i).setVisibility(View.INVISIBLE);
-        }
 
     }
 
@@ -267,7 +272,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void showPlansBtns() {
         for (int i = 0; i < plansList.size() && i < plansBtns.size(); i++) {
-            Log.e("i:", ""+i);
             plansBtns.get(i).setVisibility(View.VISIBLE);
             int finalI = i;
             plansBtns.get(i).setOnClickListener(v-> goEnterResultsScreen(plansList.get(finalI)));
@@ -314,16 +318,26 @@ public class MainActivity extends AppCompatActivity {
     private void removePlan() {
         Log.e("remove", "removing plan " + titleForPopup + "...");
 
-        // remove from plans btns
-        updateplansBtnsUi();
+//        // remove from plans btns
+//        updateplansBtnsUi();
 
         // find the plan from plan list by the title
         for (int i = 0; i < plansList.size(); i++)
             if(plansList.get(i).getTitle() == titleForPopup)
                 plansList.remove(i);
 
+        // invisible all buttons
+        invisibleAllPlansBtns();
+
+        // show plans buttons
+        showPlansBtns();
+
         // update db
         myRef.child(userId).child("plans").setValue(plansList);
+
+        if (plansList.size() == 3){
+            createProgramBtn.setVisibility(View.VISIBLE);
+        }
 
         dialog.cancel();
 

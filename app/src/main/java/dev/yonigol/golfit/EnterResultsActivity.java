@@ -39,6 +39,7 @@ public class EnterResultsActivity extends AppCompatActivity {
 
 //    private List<Integer> todaysResults;
 
+    private List<EditText> kgsVal;
     private List<List<EditText>> repsVal;
     private List<List<Integer>> planResults;
 
@@ -69,6 +70,7 @@ public class EnterResultsActivity extends AppCompatActivity {
         planResults = new ArrayList<List<Integer>>();
         exNames = new ArrayList<>();
         repsVal = new ArrayList<List<EditText>>();
+        kgsVal = new ArrayList<>();
 
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("users");
@@ -102,7 +104,7 @@ public class EnterResultsActivity extends AppCompatActivity {
 
             if(!checkAllInputsFilled()){
                 //raise error message
-                Log.e("must at least 2"," reps Err");
+                Log.e("must at least 2 and fill all kg input"," reps Err");
                 return;
             }
 
@@ -110,7 +112,10 @@ public class EnterResultsActivity extends AppCompatActivity {
             for (int i = 0; i < repsVal.size(); i++) {
                 List<Integer> exReps = new ArrayList<>();
                 for (int j = 0; j < repsVal.get(i).size(); j++) {
-                    if (repsVal.get(i).get(j).getText().toString() != null){
+
+                    if (repsVal.get(i).get(j).getText().toString() != null &&
+                            repsVal.get(i).get(j).getText().toString() != "" &&
+                            !repsVal.get(i).get(j).getText().toString().isEmpty()){
                         Log.e(""+i+j, ""+ repsVal.get(i).get(j).getText().toString());
 
 
@@ -122,11 +127,14 @@ public class EnterResultsActivity extends AppCompatActivity {
                 }
                 planResults.add(exReps);
             }
+
             calculateWorkoutVolume();
+
 
 
             addResultToPlan();
             addVolumeToPlan();
+
 
             reference.child(userId).child("plans").child(planTitle).setValue(plan);
 
@@ -143,6 +151,10 @@ public class EnterResultsActivity extends AppCompatActivity {
     private boolean checkAllInputsFilled() {
         int countEmpty = 0;
         for (int i = 0; i < repsVal.size(); i++) {
+            // check if kg is empty somewhere
+            if (kgsVal.get(i).getText().toString().isEmpty())
+                return false;
+            // check if at least 2 reps inserted by user
             for (int j = 0; j < repsVal.get(i).size(); j++) {
                 if (repsVal.get(i).get(j).getText().toString().isEmpty())
                     countEmpty++;
@@ -201,13 +213,19 @@ public class EnterResultsActivity extends AppCompatActivity {
 
     private void calculateWorkoutVolume() {
         int exSumNumOfReps;
+        int kg = 1;
         for (int i = 0; i < planResults.size(); i++) {
             exSumNumOfReps = 0;
             for (int j = 0; j < planResults.get(i).size(); j++) {
-                exSumNumOfReps += planResults.get(i).get(j);
+                if (planResults.get(i).get(j) != null )
+                    exSumNumOfReps += planResults.get(i).get(j);
             }
             // add  * kg
-            workoutVolume = workoutVolume + (exSumNumOfReps * planResults.get(i).size());
+            kg = Integer.parseInt(kgsVal.get(i).getText().toString());
+            if (kg <= 0)
+                kg = 1;
+            workoutVolume = workoutVolume + (exSumNumOfReps *  kg);
+
         }
 
 
@@ -263,6 +281,20 @@ public class EnterResultsActivity extends AppCompatActivity {
 
             newExlinearLayout.addView(tv);
 
+            //kgsVal
+            TextView tvKg = new TextView(this);
+            tvKg = setTv("Kg: ");
+            newExlinearLayout.addView(tvKg);
+
+            // add kg input:
+            EditText etKg = new EditText(this);
+            etKg = setEt(etKg, i);
+            etKg.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+            kgsVal.add(etKg);
+            newExlinearLayout.addView(etKg);
+
+
             // input reps
             TextView tvInput = new TextView(this);
             tvInput = setTv("Reps: ");
@@ -274,29 +306,7 @@ public class EnterResultsActivity extends AppCompatActivity {
             // fetch regular num of sets - for now numOfSets = 4
             InputRepslinearLayout = createRepsInputs(InputRepslinearLayout, numOfSets, i);
 
-            // btn to add and remove rep input
-//            Button btnAdd = new Button(this);
-//            Button btnRemove = new Button(this);
-//            btnAdd.setOnClickListener(v->{
-//                Log.e("add", "adding new input...");
-//
-//
-//            });
-//            btnRemove.setOnClickListener(v->{
-//                Log.e("Remove", "Removing one input...");
-//            });
-
-
-
-
             newExlinearLayout.addView(InputRepslinearLayout);
-//            newExlinearLayout.addView(btnAdd);
-//            newExlinearLayout.addView(btnRemove);
-
-
-            // tick button
-
-                // add to list of results
 
 
         }
@@ -315,22 +325,7 @@ public class EnterResultsActivity extends AppCompatActivity {
             etReps = setEt(etReps, i);
             etReps.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-//            etReps.addTextChangedListener(new TextWatcher() {
-//                @Override
-//                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//                }
-//
-//                @Override
-//                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-////TODO:
-//                }
-//
-//                @Override
-//                public void afterTextChanged(Editable editable) {
-//
-//                }
-//            });
+
             repsForEx.add(etReps);
             inputRepslinearLayout.addView(etReps);
         }
